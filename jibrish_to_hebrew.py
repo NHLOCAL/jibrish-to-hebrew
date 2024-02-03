@@ -8,9 +8,6 @@ Parameters:
     Parameter 2 (optional) = setting the conversion mode to Hebrew or gibberish - accepts "heb" or "jib"
     """
     
-    global heb_to_jib
-    global jib_to_heb
-    
     heb_to_jib = {'א': 'à', 'ב': 'á', 'ג': 'â', 'ד': 'ã', 'ה': 'ä', 'ו': 'å', 'ז': 'æ', 'ח': 'ç', 'ט': 'è', 'י': 'é', 'כ': 'ë', 'ל': 'ì', 'מ': 'î','נ': 'ð', 'ס': 'ñ', 'ע': 'ò', 'פ': 'ô', 'צ': 'ö', 'ק': '÷', 'ר': 'ø', 'ש': 'ù', 'ת': 'ú', 'ך': 'ê', 'ם': 'í', 'ן': 'ï', 'ף': 'ó', 'ץ': 'õ'}
     jib_to_heb = {'à': 'א', 'á': 'ב', 'â': 'ג', 'ã': 'ד', 'ä': 'ה', 'å': 'ו', 'æ': 'ז', 'ç': 'ח', 'è': 'ט', 'é': 'י', 'ë': 'כ', 'ì': 'ל', 'î': 'מ', 'ð': 'נ', 'ñ': 'ס', 'ò': 'ע', 'ô': 'פ', 'ö': 'צ', '÷': 'ק', 'ø': 'ר', 'ù': 'ש', 'ú': 'ת', 'ê': 'ך', 'í': 'ם', 'ï': 'ן', 'ó': 'ף', 'õ': 'ץ'}
 
@@ -60,6 +57,12 @@ Suitable for checking metadata of songs
 Parameters:
     Parameter 1 = A text string
     """
+
+    if any(c in "àáâãäåæçèéëìîðñòôö÷øùúêíïóõ" for c in string):
+        return True
+    else:
+        return False
+        
 
 if __name__ == '__main__':
     string = "àìáåí ìà éãåò & - 3"
