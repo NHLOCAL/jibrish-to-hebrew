@@ -6,6 +6,8 @@
 
 ## Usage
 
+### convert function - fix_jibrish
+
 The function takes the following parameters:
 
 - **Parameter 1**: *garbled Hebrew string*  
@@ -15,6 +17,22 @@ The function takes the following parameters:
   You can specify the conversion mode using this optional parameter. It accepts two values:
   - `"heb"`: To convert the input to Hebrew.
   - `"jib"`: To convert the input to gibrish.
+  
+
+### test function - check_jibrish
+
+A function to check if a certain string contains correct Hebrew or corrupted Hebrew
+
+Suitable for checking metadata of songs
+
+- **Parameter**:
+    Parameter = A text string
+
+- **return value**
+
+`True` or `False`
+  
+
 
 ## Example
 
@@ -26,7 +44,14 @@ result = fix_jibrish("your_garbled_string", conversion_mode="heb")
 
 # Convert Hebrew text to gibberish
 result = fix_jibrish("your_hebrew_string", conversion_mode="jib")
+
+# Check if a string contains garbled text
+result = check_jibrish("your__string")
+
 ```
+
+
+
 
 ## Installation
 
