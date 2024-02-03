@@ -26,11 +26,10 @@ A function to check if a certain string contains correct Hebrew or corrupted Heb
 Suitable for checking metadata of songs
 
 - **Parameter**:
-    Parameter = A text string
+    A text string
 
-- **return value**
-
-`True` or `False`
+- **return value**:
+    `True` or `False`
   
 
 
@@ -46,7 +45,7 @@ result = fix_jibrish("your_garbled_string", conversion_mode="heb")
 result = fix_jibrish("your_hebrew_string", conversion_mode="jib")
 
 # Check if a string contains garbled text
-result = check_jibrish("your__string")
+result = check_jibrish("your_string")
 
 ```
 
