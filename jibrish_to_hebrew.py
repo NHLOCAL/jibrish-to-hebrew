@@ -66,5 +66,5 @@ Parameters:
 
 if __name__ == '__main__':
     string = "àìáåí ìà éãåò & - 3"
-    print(jibrish_to_hebrew(string))
+    print(fix_jibrish(string))
 
