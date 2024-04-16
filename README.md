@@ -57,7 +57,7 @@ result = check_jibrish("your_string")
 You can install this package using pip:
 
 ```
-pip install jibrish_to_hebrew
+pip install jibrish-to-hebrew
 ```
 
 ## Acknowledgments
