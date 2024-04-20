@@ -1,8 +1,11 @@
-# jibrish_to_hebrew
+# jibrish to hebrew
 
 ## Description
 
-`jibrish_to_hebrew` is a Python function that simplifies the conversion between garbled text and Hebrew. It can convert a garbled Hebrew string to plain Hebrew or transform Hebrew text into gibberish and vice versa. 
+`jibrish_to_hebrew` is a Python function that simplifies the conversion between garbled text and Hebrew. It can convert a garbled Hebrew string to plain Hebrew or transform Hebrew text into jibrish and vice versa.
+
+for example: 'ùìåí ìëåìí' --> 'שלום לכולם'
+ 
 
 ## Usage
 
@@ -18,6 +21,8 @@ The function takes the following parameters:
   - `"heb"`: To convert the input to Hebrew.
   - `"jib"`: To convert the input to gibrish.
   
+  Default is `heb`
+  
 
 ### test function - check_jibrish
 
@@ -26,29 +31,43 @@ A function to check if a certain string contains correct Hebrew or corrupted Heb
 Suitable for checking metadata of songs
 
 - **Parameter**:
-    A text string
+  A text string
 
 - **return value**:
-    `True` or `False`
+  `True` If the string is garbled, or `False` if she is ok
   
 
 
 ## Example
 
 ```
-from jibrish_to_hebrew import fix_jibrish
+from jibrish_to_hebrew import fix_jibrish, check_jibrish
+
+
+jibrish_string = 'ùìåí ìëåìí'
+hebrew_string = 'שלום לכולם'
 
 # Convert garbled text to plain Hebrew
-result = fix_jibrish("your_garbled_string", conversion_mode="heb")
+heb_result = fix_jibrish(jibrish_string, "heb")
 
-# Convert Hebrew text to gibberish
-result = fix_jibrish("your_hebrew_string", conversion_mode="jib")
+# Convert Hebrew text to gibrish
+jib_result = fix_jibrish(hebrew_string, "jib")
 
 # Check if a string contains garbled text
-result = check_jibrish("your_string")
+bool_result = check_jibrish(jibrish_string)
 
 ```
 
+## Return
+
+```
+print(f'{garbled_string}: {result_heb}')
+print(bool_result)
+
+ùìåí ìëåìí: שלום לכולם
+True
+
+```
 
 
 
